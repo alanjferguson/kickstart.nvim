@@ -115,13 +115,13 @@ require('lazy').setup({
   },
 
   {
-    -- Set base16 theme
-    'RRethy/nvim-base16',
-    priority = 1000,
+    'shaunsingh/solarized.nvim',
+    priority=1000,
+    lazy=false,
     config = function()
-      local base16_theme = [[base16-]] .. os.getenv('BASE16_THEME')
-      vim.cmd('colorscheme ' .. base16_theme)
-    end,
+      vim.o.bg = 'light'
+      vim.cmd('colorscheme solarized')
+    end
   },
 
   {
@@ -130,10 +130,7 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
+        theme = 'solarized_dark',
       },
     },
   },
